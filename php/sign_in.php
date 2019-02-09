@@ -5,8 +5,13 @@
 <meta charset ="utf-8">
 <title> Sign-in </title>
 
-
-</head></head>
+<link rel="stylesheet" href="..\css\sign_in.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+  <meta name="theme-color" content="#333334">
+  <meta name="msapplication-navbutton-color" content="#333334">
+  <meta name="apple-mobile-web-app-status-bar-style" content="#333334">
+</head>
 
 <body>
 <?php
@@ -51,22 +56,14 @@ else{header("location:sign_in.php");}
 ?>
 
 
-							<h1> Sign in </h1>
+		<div class="container">
+			<p class="title"> Sign In </p>
 
-							<form action ="" method ="POST" >
-
-							 Email:
-							<input type ="text" name="email" placeholder ="Your email" ></br>      <! text="email" may not work with safari >
-</br></br>
-						 Password:
-							<input type ="password" name="password" placeholder ="Enter Strong Password" ></br>
-</br></br>
-
-
-							</br>
-							</br>
-							<input type ="submit" name="login" value="LOG IN" ></br></br></br>
-							<a href="register_form.php" >MAKE AN ACCOUNT</a>
+			<form action ="" method ="POST" >
+				<input type ="text" name="email" placeholder ="E-mail" >
+				<input type ="password" name="password" placeholder ="Password" >
+				<input type ="submit" name="login" value="Log In" >
+				<a href="register_form.php" >don't have an Account?</a>
 
 							<?php
 							if( isset($_POST['login']) && ($_POST['email'] == 'admin') && ($_POST['password'] == '1') )
@@ -78,6 +75,7 @@ else{header("location:sign_in.php");}
 								header("location:admin_sign_in.php");
 	    					}
 							?>
+		</div>
 
 </body>
 
