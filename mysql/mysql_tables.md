@@ -23,7 +23,7 @@ imei bigint NOT NULL UNIQUE,
 phone_primary_number int(11) NOT NULL UNIQUE ,
 mobile_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP PRIMARY KEY,
 
-check char(255) NOT NULL ,
+check_m char(255) NOT NULL ,
 the_checker char(255) NOT NULL,
 
 FOREIGN KEY (mobile_id) REFERENCES register_form (id) ON UPDATE CASCADE ON DELETE CASCADE
