@@ -4,7 +4,12 @@
 <head>
 <meta charset ="utf-8">
 <title> Register Form </title>
-
+<link rel="stylesheet" href="..\css\register_form.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <meta name="theme-color" content="#333334">
+    <meta name="msapplication-navbutton-color" content="#333334">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#333334">
 </head>
 
 <body>
@@ -34,55 +39,51 @@ if( !empty($_POST['email']) && !empty($_POST['first_password']) && !empty($_POST
 	}
 }
 	?>
-<h1> Register Form </h1>
+	<div class="container">
+<p class="title"> Register Form </p>
 
 <form action ="" method ="POST" >
-
-	 Email:</br>
 	<?php
 	if(isset($_POST['submit']))
 	 {
 	 if(empty($_POST['email']) || (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)))
 	 {
-		 echo'please enter email';
+		 echo'<p class="warning">please enter email</p>';
 	 }
 	 }
 	 ?>
-<input type ="text" name="email" placeholder ="Your email" ></br>
-</br></br>
-	 Password:</br>
-	  <?php
+
+<input type ="text" name="email" placeholder ="E-mail" >
+	 
+	 <?php
 	 if(isset($_POST['submit']))
 	 {
 	 if(empty($_POST['first_password']))
 	 {
-		 echo'please enter password';
+		 echo'<p class="warning">please enter Password</p>';
 	 }
 	 }
 	 ?>
-<input type ="password" name="first_password" placeholder ="Enter Strong Password" ></br>
-</br></br>
-	 Confirm Password:</br>
-	<?php
+
+<input type ="password" name="first_password" placeholder ="Password" >
+
+<?php
 	 if(isset($_POST['submit']))
 	 {
 	 if(empty($_POST['check_password']) || ($_POST['first_password'] != $_POST['check_password']))
 	 {
-		echo'please enter re-enter password';
+		echo'<p class="warning">please Re-enter Password</p>';
 	 }
 	}
 	?>
-<input type ="password" name="check_password" placeholder ="Repeat password" ></br>
 
-</br></br>
+<input type ="password" name="check_password" placeholder ="Confirm password" ></br>
 
-<input type ="submit" name="submit" value="submit" ></br>
+<input type ="submit" name="submit" value="Create an Account" >
 </form>
 
-<a href ="sign_in.php"> ALREADY HAVE AN ACCOUNT</a>
-
+<a href ="sign_in.php">already have an Account?</a>
 
 
 </body>
-
 </html>
