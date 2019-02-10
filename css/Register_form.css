@@ -12,7 +12,7 @@ body{
     justify-content: center;
     align-items: center;
     padding: 0;
-    font-family: 'Raleway';
+    font-family: 'Raleway' , arial;
     grid-auto-columns: auto auto auto;
     grid-auto-rows: auto auto auto;
     animation: grad 10s infinite;
@@ -82,8 +82,11 @@ body{
 .container a:hover{
     color: #15f;
 }
-.container p.warning{
+.container p.warning , p.cssWarning{
     color: #f64;
     margin: 0;
     font-size: 10px;
+}
+.container p.cssWarning{
+    display: none;
 }

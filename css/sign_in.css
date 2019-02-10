@@ -12,7 +12,7 @@ body{
     justify-content: center;
     align-items: center;
     padding: 0;
-    font-family: 'Raleway';
+    font-family: 'Raleway' , arial;
     grid-auto-columns: auto auto auto;
     grid-auto-rows: auto auto auto;
     animation: grad 10s infinite;

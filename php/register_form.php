@@ -42,18 +42,22 @@ if( !empty($_POST['email']) && !empty($_POST['first_password']) && !empty($_POST
 	<div class="container">
 <p class="title"> Register Form </p>
 
-<form action ="" method ="POST" >
+<form action ="" method ="POST">
+
+<input type ="text" name="email" autocomplete="off" placeholder ="E-mail" >
+
 	<?php
 	if(isset($_POST['submit']))
 	 {
 	 if(empty($_POST['email']) || (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)))
 	 {
-		 echo'<p class="warning">please enter email</p>';
+		 echo'<p class="warning" id="php-email-warning">please enter valid E-mail</p>';
 	 }
 	 }
 	 ?>
+	 <p class="cssWarning" id="email-warning">test</p>
 
-<input type ="text" name="email" placeholder ="E-mail" >
+<input type ="password" name="first_password" placeholder ="Password" >
 	 
 	 <?php
 	 if(isset($_POST['submit']))
@@ -64,26 +68,33 @@ if( !empty($_POST['email']) && !empty($_POST['first_password']) && !empty($_POST
 	 }
 	 }
 	 ?>
+	 <p class="cssWarning" id="password1-warning">asd</p>
 
-<input type ="password" name="first_password" placeholder ="Password" >
+<input type ="password" name="check_password" placeholder ="Confirm password" >
 
 <?php
 	 if(isset($_POST['submit']))
 	 {
-	 if(empty($_POST['check_password']) || ($_POST['first_password'] != $_POST['check_password']))
+	 if(empty($_POST['check_password']))
 	 {
 		echo'<p class="warning">please Re-enter Password</p>';
+	 }else if(($_POST['first_password'] != $_POST['check_password'])){
+		echo"<p class='warning'>Password don't match</p>";
 	 }
 	}
 	?>
-
-<input type ="password" name="check_password" placeholder ="Confirm password" ></br>
+    <p class="cssWarning" id="password2-warning">asasg</p>
 
 <input type ="submit" name="submit" value="Create an Account" >
 </form>
 
 <a href ="sign_in.php">already have an Account?</a>
 
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+<script src="../js/register_form.js"></script>
 
 </body>
 </html>

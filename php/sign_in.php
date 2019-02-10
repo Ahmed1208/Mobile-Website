@@ -39,7 +39,8 @@ $result=mysqli_query($connect, $query);
 
 $search= mysqli_fetch_assoc($result);
 
-if($search['email'] == null) {header("location:sign_in.php");}
+if($search['email'] == null) {header("location:sign_in.php");
+}
 
 
 if(($search['email'] != null)  && ($search['first_password'] == $passwords))
