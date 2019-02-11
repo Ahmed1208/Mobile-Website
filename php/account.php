@@ -318,7 +318,7 @@ else
 {
 	$query_pass="UPDATE register_form SET first_password ='".$_POST['new_password']."' WHERE id ='$id' ";
 	$result_pass=mysqli_query( $connect , $query_pass );
-	if($result_search){echo ' NEW PASSWORD SAVED';}
+	if($result_pass){echo ' NEW PASSWORD SAVED';}
 }
 }
 ?>
